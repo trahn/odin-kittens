@@ -1,0 +1,22 @@
+<%= form_for(@kitten) do |f| %>
+  <% if @kitten.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@kitten.errors.count, "error") %> prohibited this kitten from being saved:</h2>
+
+      <ul>
+      <% @kitten.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  Name: <%= f.text_field :name %></br>
+  Age: <%= select :kitten, :age, (0..20).to_a.map { |a| [a, a] } %></br>
+  Cuteness: <%= select :kitten, :cuteness, (1..5).to_a.map { |a| [a, a] } %></br>
+  Softness: <%= select :kitten, :softness, (1..5).to_a.map { |a| [a, a] } %></br>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

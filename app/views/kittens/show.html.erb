@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+Name: <%= @kitten.name %></br>
+Age: <%= @kitten.age %></br>
+Cuteness: <%= @kitten.cuteness %></br>
+Softness: <%= @kitten.softness %></br>
+
+<%= link_to 'Edit', edit_kitten_path(@kitten) %> |
+<%= link_to 'Destroy', @kitten, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Back', kittens_path %>
